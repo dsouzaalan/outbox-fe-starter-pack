@@ -1,4 +1,3 @@
-import { toast } from '@/hooks/useToast';
 import { clearCookies } from '../helpers/others/cookies';
 
 export const asyncHandler = async (
@@ -46,21 +45,21 @@ const handleError = (
     } else if (error?.name === 'AxiosError' && error?.code === 'ECONNABORTED') {
       // Handle timeout errors
       if (showToast) {
-        toast({
-          variant: 'failed',
-          title: 'Request timeout, please try again later.',
-        });
+        // toast({
+        //   variant: 'failed',
+        //   title: 'Request timeout, please try again later.',
+        // });
       }
     } else {
       // Show general error toast for other errors
       if (showToast) {
-        toast({
-          variant: 'failed',
-          title:
-            error?.response?.data?.message ||
-            error?.response?.data?.data?.message ||
-            'Something went wrong',
-        });
+        // toast({
+        //   variant: 'failed',
+        //   title:
+        //     error?.response?.data?.message ||
+        //     error?.response?.data?.data?.message ||
+        //     'Something went wrong',
+        // });
       }
       return error;
     }
